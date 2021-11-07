@@ -7,6 +7,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Cart;
 use App\Models\Category;
+
 class ShopComponent extends Component
 {
     public $sorting;
