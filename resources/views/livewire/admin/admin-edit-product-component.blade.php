@@ -97,7 +97,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Product Image</label>
                                 <div class="col-md-4">
-                                    <input type="file" class="input-file" wire:model="image" />
+                                    <input type="file" class="input-file" wire:model="newimage" />
                                     @if($newimage)
                                         <img src="{{$newimage->temporaryUrl()}}" width="120" />
                                         @else
