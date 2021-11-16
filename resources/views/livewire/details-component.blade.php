@@ -1,4 +1,3 @@
-<!--main area-->
 <main id="main" class="main-site">
     <style>
         .regprice {
@@ -283,6 +282,4 @@
         </div><!--end row-->
 
     </div><!--end container-->
-
 </main>
-<!--main area-->
