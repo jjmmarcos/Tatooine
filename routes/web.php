@@ -7,6 +7,7 @@ use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\WishlistComponent;
+use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminCategoryComponent;
@@ -57,6 +58,8 @@ Route::get('/product-category/{category_slug}', CategoryComponent::class)->name(
 Route::get('/search',SearchComponent::class)->name('product.search');
 
 Route::get('/wishlist',WishlistComponent::class)->name('product.wishlist');
+
+Route::get('/thank-you',ThankyouComponent::class)->name('thankyou');
 
 /*
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
