@@ -6,10 +6,45 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                Ordered Items
+                                Ordered Details
                             </div>
                             <div class="col-md-6">
                                 <a href="{{route('admin.orders')}}" class="btn btn-success pull-right">All Orders</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <th>Order Id</th>
+                                <td>{{$order->id}}</td>
+                                <th>Order Date</th>
+                                <td>{{$order->created_at}}</td>
+                                <th>Status</th>
+                                <td>{{$order->status}}</td>
+                                @if($order->status == "delivered")
+                                <th>Delivery Date</th>
+                                <td>{{$order->delivered_date}}</td>
+                                @elseif($order->status == "canceled")
+                                <th>Cancellation Date</th>
+                                <td>{{$order->canceled_date}}</td>
+                                @endif
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-6">
+                                Ordered Items
+                            </div>
+                            <div class="col-md-6">
+                                
                             </div>
                         </div>
                     </div>
@@ -23,7 +58,7 @@
                                         <figure><img src="{{ asset('assets/images/products') }}/{{$item->product->image}}" alt="{{$item->product->name}}"></figure>
                                     </div>
                                     <div class="product-name">
-                                        <a class="link-to-product" href="{{route('product.details', ['slug'=>$item->product->slug])}}">{{$item->product->name}}</a>
+                                        <a class="link-to-product" href="{{route('product.details',['slug'=>$item->product->slug])}}">{{$item->product->name}}</a>
                                     </div>
                                     <div class="price-field produtc-price"><p class="price">${{$item->price}}</p></div>
                                     <div class="quantity">                                        
@@ -149,14 +184,17 @@
                             <tr>
                                 <th>Transaction Mode</th>
                                 <td>{{$order->transaction->mode}}</td>
+                                <!-- $order->transaction->mode  -->
                             </tr>
                             <tr>
                                 <th>Status</th>
                                 <td>{{$order->transaction->status}}</td>
+                                <!-- $order->transaction->status  -->
                             </tr>
                             <tr>
                                 <th>Transaction Date</th>
                                 <td>{{$order->transaction->created_at}}</td>
+                                <!-- $order->transaction->created_at  -->
                             </tr>
                         </table>
                     </div>
