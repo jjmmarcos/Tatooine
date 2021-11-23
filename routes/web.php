@@ -11,6 +11,7 @@ use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\User\UserOrdersComponent;
 use App\Http\Livewire\User\UserOrderDetailsComponent;
+use App\Http\Livewire\User\UserReviewComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
@@ -73,12 +74,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 // For User or Customer
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
-    Route::get('user/orders',UserOrdersComponent::Class)->name('user.orders');
-    Route::get('user/orders/{order_id}',UserOrderDetailsComponent::Class)->name('user.orderdetails');
+    Route::get('/user/orders',UserOrdersComponent::class)->name('user.orders');
+    Route::get('/user/orders/{order_id}',UserOrderDetailsComponent::class)->name('user.orderdetails');
+    Route::get('/user/review/{order_item_id}',UserReviewComponent::class)->name('user.review');
 });
 
 // For Admin
-Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
+// Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/categories', AdminCategoryComponent::class)->name('admin.categories');
     Route::get('/admin/category/add', AdminAddCategoryComponent::class)->name('admin.addcategory');

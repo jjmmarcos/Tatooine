@@ -16,6 +16,7 @@ class AuthAdmin
      */
     public function handle(Request $request, Closure $next)
     {
+        //dd(session('utype'));
         if(session('utype') === 'ADM')
         {
             return $next($request);

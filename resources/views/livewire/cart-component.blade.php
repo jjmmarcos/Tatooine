@@ -138,7 +138,8 @@
                 <p>No item saved for later</p>
                 @endif
         </div>
-
+        Hola {{Auth::user()->name}} <br>
+        {{Auth::user()->utype}}
         <div class="wrap-show-advance-info-box style-1 box-in-site">
             <h3 class="title-box">Most Viewed Products</h3>
             <div class="wrap-products">
