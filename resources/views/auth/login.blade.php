@@ -47,7 +47,7 @@
     </x-jet-authentication-card>
 </x-guest-layout> --}}
 
-<x-base-layout>
+<x-guest-layout>
     <!--main area-->
 	<main id="main" class="main-site left-sidebar">
 
@@ -97,4 +97,4 @@
 
 	</main>
 	<!--main area-->
-</x-base-layout>
+</x-guest-layout>
