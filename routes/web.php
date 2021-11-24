@@ -32,6 +32,7 @@ use App\Http\Livewire\Admin\AdminEditCouponComponent;
 use App\Http\Livewire\Admin\AdminOrderComponent;
 use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
 use App\Http\Livewire\Admin\AdminContactComponent;
+use App\Http\Livewire\Admin\AdminSettingComponent;
 
 
 use Illuminate\Support\Facades\Route;
@@ -111,4 +112,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/admin/orders/{order_id}',AdminOrderDetailsComponent::class)->name('admin.orderdetails');
 
     Route::get('/admin/contact-us',AdminContactComponent::class)->name('admin.contact');
+
+    Route::get('/admin/settings',AdminSettingComponent::class)->name('admin.settings');
 });
