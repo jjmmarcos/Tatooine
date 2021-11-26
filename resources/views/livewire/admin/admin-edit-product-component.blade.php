@@ -150,6 +150,19 @@
                             </div>
 
                             <div class="form-group">
+                                <label class="col-md-4 control-label">Sub Category</label>
+                                <div class="col-md-4">
+                                    <select class="form-control" wire:model="scategory_id" wire:change="changeSubcategory">
+                                        <option value="0">Select Category</option>
+                                        @foreach ($scategories as $scategory)
+                                            <option value="{{$scategory->id}}">{{$scategory->name}}</option>
+                                        @endforeach                                    
+                                    </select>
+                                    @error('scategory_id') <p class="text-danger">{{$message}}</p> @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-4">
                                     <button type="submit" class="btn btn-primary">Update</button>
