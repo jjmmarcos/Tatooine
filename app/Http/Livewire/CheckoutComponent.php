@@ -172,7 +172,7 @@ class CheckoutComponent extends Component
 
         if($this->paymentmode == 'cod')
         {
-            $this->makeTransaction($order_id,'pending');
+            $this->makeTransaction($order->id,'pending');
             $this->resetCart();
         }
         else if($this->paymentmode == 'card')
