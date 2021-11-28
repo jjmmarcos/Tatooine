@@ -35,6 +35,9 @@ use App\Http\Livewire\Admin\AdminOrderComponent;
 use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
 use App\Http\Livewire\Admin\AdminContactComponent;
 use App\Http\Livewire\Admin\AdminSettingComponent;
+use App\Http\Livewire\Admin\AdminAttributesComponent;
+use App\Http\Livewire\Admin\AdminAddAttributeComponent;
+use App\Http\Livewire\Admin\AdminEditAttributeComponent;
 
 
 use Illuminate\Support\Facades\Route;
@@ -118,4 +121,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/admin/contact-us',AdminContactComponent::class)->name('admin.contact');
 
     Route::get('/admin/settings',AdminSettingComponent::class)->name('admin.settings');
+
+    Route::get('/admin/attributes',AdminAttributesComponent::class)->name('admin.attributes');
+    Route::get('/admin/attribute/add',AdminAddAttributeComponent::class)->name('admin.add_attribute');
+    Route::get('/admin/attribute/edit/{attribute_id}',AdminEditAttributeComponent::class)->name('admin.edit_attribute');
 });
