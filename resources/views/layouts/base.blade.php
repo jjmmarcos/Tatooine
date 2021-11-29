@@ -48,8 +48,6 @@
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
-								<li class="menu-item" ><a title="Register or Login" href="login.html">Login</a></li>
-								<li class="menu-item" ><a title="Register or Login" href="register.html">Register</a></li>
 								<li class="menu-item lang-menu menu-item-has-children parent">
 									<a title="English" href="#"><span class="img label-before"><img src="assets/images/lang-en.png" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu lang" >
@@ -84,9 +82,6 @@
 													</li>
 													<li class="menu-item">
 														<a title="Categories" href="{{route('admin.categories')}}">Categories</a>
-													</li>
-													<li class="menu-item">
-														<a title="Attributes" href="{{route('admin.attributes')}}">Attributes</a>
 													</li>
 													<li class="menu-item">
 														<a title="Products" href="{{route('admin.products')}}">All Products</a>
@@ -214,7 +209,7 @@
 								</li>
 								<li class="menu-item">
 									<a href="/contact-us" class="link-term mercado-item-title">Contact Us</a>
-								</li>																	
+								</li>														
 							</ul>
 						</div>
 					</div>
