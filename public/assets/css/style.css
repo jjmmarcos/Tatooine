@@ -57,7 +57,7 @@ body{
 	overflow-x: hidden;
 }
 img{
-	max-width: 100%;
+	max-width: 70%;
     height: auto;
 }
 input:focus{

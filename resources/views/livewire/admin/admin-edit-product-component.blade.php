@@ -163,6 +163,23 @@
                             </div>
 
                             <div class="form-group">
+                                <label class="col-md-4 control-label">Author</label>
+                                <div class="col-md-4">
+                                    <select class="form-control" wire:model="author_id">
+                                        @if($author_id)
+                                            <option value="{{$author_id}}"></option>
+                                        @else
+                                            <option value="0">Select Author</option>
+                                        @endif
+                                        @foreach ($authors as $author)
+                                            <option value="{{$author->id}}">{{$author->name}}</option>
+                                        @endforeach                                    
+                                    </select>
+                                    @error('author_id') <p class="text-danger">{{$message}}</p> @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-4">
                                     <button type="submit" class="btn btn-primary">Update</button>

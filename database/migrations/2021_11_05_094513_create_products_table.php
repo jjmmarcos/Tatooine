@@ -19,6 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('slug')->unique();
             $table->string('short_description')->nullable();
             $table->text('description');
+            $table->string('author')->nullable();
+            $table->integer('number_of_pages')->nullable();
             $table->decimal('regular_price');
             $table->decimal('sale_price')->nullable();
             $table->string('SKU');
@@ -29,6 +31,8 @@ class CreateProductsTable extends Migration
             $table->text('images')->nullable();
             $table->bigInteger('category_id')->unsigned()->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->bigInteger('author_id')->unsigned()->nullable();
+            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
             $table->timestamps();
         });
     }

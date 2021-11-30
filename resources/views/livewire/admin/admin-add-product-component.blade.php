@@ -51,6 +51,14 @@
                             </div>
 
                             <div class="form-group">
+                                <label class="col-md-4 control-label">Number Of Pages</label>
+                                <div class="col-md-4">
+                                    <input type="text" placeholder="Number Of Pages" class="form-control input-md" wire:model="number_of_pages" />
+                                    @error('number_of_pages') <p class="text-danger">{{$message}}</p> @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="col-md-4 control-label">Regular Price</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Regular Price" class="form-control input-md" wire:model="regular_price" />
@@ -150,6 +158,19 @@
                                         @endforeach                                    
                                     </select>
                                     @error('scategory_id') <p class="text-danger">{{$message}}</p> @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Author</label>
+                                <div class="col-md-4">
+                                    <select class="form-control" wire:model="author_id">
+                                        <option value="0">Select Author</option>
+                                        @foreach ($authors as $author)
+                                            <option value="{{$author->id}}">{{$author->name}}</option>
+                                        @endforeach                                    
+                                    </select>
+                                    @error('author_id') <p class="text-danger">{{$message}}</p> @enderror
                                 </div>
                             </div>
 

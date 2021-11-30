@@ -152,11 +152,15 @@
 								<div class="item-content">
 									<div class="wrap-list-item social-network">
 										<ul>
-											<li><a href="{{$setting->twitter}}" class="link-to-item" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-											<li><a href="{{$setting->facebook}}" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-											<li><a href="{{$setting->pinterest}}" class="link-to-item" title="pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-											<li><a href="{{$setting->instagram}}" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-											<li><a href="{{$setting->youtube}}" class="link-to-item" title="youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+											@php
+												$socialNetworks = ['twitter','facebook','pinterest','instagram','youtube'];
+												foreach ($socialNetworks as $socialNetwork) {										
+													if($setting->$socialNetwork)
+													{
+														echo "<li><a href=\"{{$setting->$socialNetwork}}\" class=\"link-to-item\" title=\"$socialNetwork\"><i class=\"fa fa-$socialNetwork\" aria-hidden=\"true\"></i></a></li>";
+													}													
+												}
+											@endphp
 										</ul>
 									</div>
 								</div>

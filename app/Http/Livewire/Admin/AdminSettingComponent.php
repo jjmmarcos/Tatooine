@@ -41,14 +41,14 @@ class AdminSettingComponent extends Component
         $this->validateOnly($fields,[
             'email' => 'required|email',
             'phone' => 'required',
-            'phone2' => 'required',
+            'phone2' => 'numeric',
             'address' => 'required',
             'map' => 'required',
-            'twitter' => 'required',
-            'facebook' => 'required',
-            'pinterest' => 'required',
-            'instagram' => 'required',
-            'youtube' => 'required'
+            'twitter' => 'string',
+            'facebook' => 'string',
+            'pinterest' => 'string',
+            'instagram' => 'string',
+            'youtube' => 'string'
         ]);
     }
 
@@ -57,14 +57,14 @@ class AdminSettingComponent extends Component
         $this->validate([
             'email' => 'required|email',
             'phone' => 'required',
-            'phone2' => 'required',
+            'phone2' => 'numeric',
             'address' => 'required',
             'map' => 'required',
-            'twitter' => 'required',
-            'facebook' => 'required',
-            'pinterest' => 'required',
-            'instagram' => 'required',
-            'youtube' => 'required'
+            'twitter' => 'string',
+            'facebook' => 'string',
+            'pinterest' => 'string',
+            'instagram' => 'string',
+            'youtube' => 'string'
         ]);
         $setting = Setting::find(1);
         if(!$setting)

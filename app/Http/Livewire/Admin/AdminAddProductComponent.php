@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Product;
+use App\Models\Author;
 use Livewire\Component;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
@@ -17,6 +18,7 @@ class AdminAddProductComponent extends Component
     public $slug;
     public $short_description;
     public $description;
+    public $number_of_pages;
     public $regular_price;
     public $sale_price;
     public $SKU;
@@ -24,9 +26,10 @@ class AdminAddProductComponent extends Component
     public $featured;
     public $quantity;
     public $image;
-    public $category_id;
     public $images;
+    public $category_id;    
     public $scategory_id;
+    public $author_id;
 
     public function mount()
     {
@@ -46,13 +49,15 @@ class AdminAddProductComponent extends Component
             'slug' => 'required|unique:products',
             'short_description' => 'required',
             'description' => 'required',
+            'number_of_pages' => 'numeric',
             'regular_price' => 'required|numeric',
             'sale_price' => 'numeric',
             'SKU' => 'required',
             'stock_status' => 'required',
             'quantity' => 'required|numeric',
             'image' => 'required|mimes:jpeg,png',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'author_id' => 'numeric'
         ]);
     }
 
@@ -69,19 +74,22 @@ class AdminAddProductComponent extends Component
             'stock_status' => 'required',
             'quantity' => 'required|numeric',
             'image' => 'required|mimes:jpeg,png',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'author_id' => 'numeric'
         ]);
         $product = new Product();
         $product->name = $this->name;
         $product->slug = $this->slug;
         $product->short_description = $this->short_description;
         $product->description = $this->description;
+        $product->number_of_pages = $this->number_of_pages;
         $product->regular_price = $this->regular_price;
         $product->sale_price = $this->sale_price;
         $product->SKU = $this->SKU;
         $product->stock_status = $this->stock_status;
         $product->featured = $this->featured;
         $product->quantity = $this->quantity;
+        $product->author_id = $this->author_id;
 
         $imageName = Carbon::now()->timestamp.'.'.$this->image->extension();
         $this->image->storeAs('products',$imageName);
@@ -117,6 +125,7 @@ class AdminAddProductComponent extends Component
     {
         $categories = Category::all();
         $scategories = Subcategory::where('category_id',$this->category_id)->get();
-        return view('livewire.admin.admin-add-product-component',['categories'=>$categories,'scategories'=>$scategories])->layout('layouts.base');
+        $authors = Author::all();
+        return view('livewire.admin.admin-add-product-component',['categories'=>$categories,'scategories'=>$scategories,'authors'=>$authors])->layout('layouts.base');
     }
 }

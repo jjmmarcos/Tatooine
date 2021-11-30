@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Product;
+use App\Models\Author;
 use Livewire\Component;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
@@ -17,6 +18,7 @@ class AdminEditProductComponent extends Component
     public $slug;
     public $short_description;
     public $description;
+    public $number_of_pages;
     public $regular_price;
     public $sale_price;
     public $SKU;
@@ -27,6 +29,7 @@ class AdminEditProductComponent extends Component
     public $category_id;
     public $newimage;
     public $product_id;
+    public $author_id;
 
     public $images;
     public $newimages;
@@ -39,6 +42,7 @@ class AdminEditProductComponent extends Component
         $this->slug = $product->slug;
         $this->short_description = $product->short_description;
         $this->description = $product->description;
+        $this->number_of_pages = $product->number_of_pages;
         $this->regular_price = $product->regular_price;
         $this->sale_price = $product->sale_price;
         $this->SKU = $product->SKU;
@@ -50,6 +54,7 @@ class AdminEditProductComponent extends Component
         $this->category_id = $product->category_id;
         $this->scategory_id = $product->subcategory_id;
         $this->product_id = $product->id;
+        $this->author_id = $product->author_id;
     }
 
     public function generateSlug()
@@ -159,6 +164,7 @@ class AdminEditProductComponent extends Component
     {
         $categories = Category::all();
         $scategories = Subcategory::where('category_id',$this->category_id)->get();
-        return view('livewire.admin.admin-edit-product-component',['categories'=>$categories,'scategories'=>$scategories])->layout('layouts.base');
+        $authors = Author::all();
+        return view('livewire.admin.admin-edit-product-component',['categories'=>$categories,'scategories'=>$scategories,'authors'=>$authors])->layout('layouts.base');
     }
 }

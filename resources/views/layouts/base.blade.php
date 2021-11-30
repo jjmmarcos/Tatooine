@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home</title>	
+	<title>Tatooine Comics</title>	
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
@@ -42,7 +42,7 @@
 						<div class="topbar-menu left-menu">
 							<ul>
 								<li class="menu-item" >
-									<a title="Hotline: (+123) 456 789" href="#" ><span class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
+									<a title="Hotline: (+34) 953 47 95 34" href="{{route('contact')}}" ><span class="icon label-before fa fa-mobile"></span>Hotline: (+34) 953 47 95 34</a>
 								</li>
 							</ul>
 						</div>
@@ -85,6 +85,9 @@
 													</li>
 													<li class="menu-item">
 														<a title="Products" href="{{route('admin.products')}}">All Products</a>
+													</li>
+													<li class="menu-item">
+														<a title="Authors" href="{{route('admin.authors')}}">All Authors</a>
 													</li>
 													<li class="menu-item">
 														<a title="Manage Home Slider" href="{{route('admin.homeslider')}}">Manage Home Slider</a>
@@ -154,7 +157,7 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="index.html" class="link-to-home"><img src="{{ asset('assets/images/logo-top-1.png') }}" alt="mercado"></a>
+							<a href="/" class="link-to-home"><img src="{{ asset('assets/images/tatooine-logo.jpg') }}" alt="Logo"></a>
 						</div>
 
 						@livewire('header-search-component')
