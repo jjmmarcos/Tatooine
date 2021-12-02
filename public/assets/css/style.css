@@ -57,9 +57,22 @@ body{
 	overflow-x: hidden;
 }
 img{
-	max-width: 70%;
+	max-width: 100%;
+    height: 100%;
+}
+td > img {
     height: auto;
 }
+
+.image-format {
+    height: 400px;
+    width: 450px;
+}
+.image-home {
+    height: 300px;
+    width: 350px;
+}
+
 input:focus{
    outline: none;
 }
@@ -1040,19 +1053,25 @@ li.menu-item .nav-label.sale-label::before{
 }
 .wrap-main-slide .slide-1 .f-title b{
     color: #222222;
+    background-color: rgba(245, 229, 213, 1);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 45px;
     font-weight: 700;
 }
 .wrap-main-slide .slide-1 .subtitle{
     font-size: 18px;
     line-height: 24px;
-    color: #555555;
+    color: #222222;
+    background-color: rgba(245, 229, 213, 1);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: inline-block;
 }
 .wrap-main-slide .slide-1 .sale-info{
     font-size: 16px;
     line-height: 24px;
-    color: #888888;
+    color: #222222;
+    background-color: rgba(203, 141, 128, 1);
+    border-radius: 10px;
     margin-top: 6px;
     margin-bottom: 19px;
 }
@@ -6530,7 +6549,7 @@ background-color: #888888;
         padding: 10px;
     }
     .style-twin-default .banner-item{
-        width: 100%;
+        width: auto;
         padding-top: 30px;
         font-size: 0;
     }

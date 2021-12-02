@@ -2,12 +2,13 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Product;
 use Livewire\Component;
-use Livewire\WithPagination;
-use Cart;
+use App\Models\Product;
 use App\Models\Category;
 use App\Models\Subcategory;
+use Cart;
+use Livewire\WithPagination;
+
 class CategoryComponent extends Component
 {
     public $sorting;

@@ -42,7 +42,7 @@
 						<div class="topbar-menu left-menu">
 							<ul>
 								<li class="menu-item" >
-									<a title="Hotline: (+34) 953 47 95 34" href="{{route('contact')}}" ><span class="icon label-before fa fa-mobile"></span>Hotline: (+34) 953 47 95 34</a>
+									<a title="Call us: (+34) 953 47 95 34" href="{{route('contact')}}" ><span class="icon label-before fa fa-mobile"></span>Call us: (+34) 953 47 95 34</a>
 								</li>
 							</ul>
 						</div>

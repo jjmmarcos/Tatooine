@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Product;
+use App\Models\Author;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Cart;
@@ -80,7 +81,8 @@ class ShopComponent extends Component
             Cart::instance('wishlist')->store(Auth::user()->email);
         }
 
-        return view('livewire.shop-component', ['products'=> $products,'categories'=>$categories])->layout("layouts.base");
+        $authors = Author::orderBy('name')->get();
+        return view('livewire.shop-component', ['products'=> $products,'categories'=>$categories,'authors'=>$authors])->layout("layouts.base");
     }
 }
 

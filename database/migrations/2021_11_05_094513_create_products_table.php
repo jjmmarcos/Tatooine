@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer('number_of_pages')->nullable();
             $table->decimal('regular_price');
             $table->decimal('sale_price')->nullable();
-            $table->string('SKU');
+            $table->string('SKU')->nullable(); // I put it as nullable
             $table->enum('stock_status', ['instock', 'outofstock']);
             $table->boolean('featured')->default(false);
             $table->unsignedInteger('quantity')->default(10);

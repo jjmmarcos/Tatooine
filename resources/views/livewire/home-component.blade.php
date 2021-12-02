@@ -10,7 +10,7 @@
 					<div class="slide-info slide-1">
 						<h2 class="f-title"><b>{{$slide->title}}</b></h2>
 						<span class="subtitle">{{$slide->subtitle}}</span>
-						<p class="sale-info">Only price: <span class="price">${{$slide->price}}</span></p>
+						<p class="sale-info"> <span class="price"></span></p>
 						<a href="{{$slide->link}}" class="btn-link">Shop Now</a>
 					</div>
 				</div>
@@ -22,12 +22,12 @@
 		<div class="wrap-banner style-twin-default">
 			<div class="banner-item">
 				<a href="#" class="link-banner banner-effect-1">
-					<figure><img src="{{ asset('assets/images/home-1-banner-1.jpg') }}" alt="" width="580" height="190"></figure>
+					<figure><img src="{{ asset('assets/images/banner1.jpg') }}" alt="banner1" height="100px" ></figure>
 				</a>
 			</div>
 			<div class="banner-item">
 				<a href="#" class="link-banner banner-effect-1">
-					<figure><img src="{{ asset('assets/images/home-1-banner-2.jpg') }}" alt="" width="580" height="190"></figure>
+					<figure><img src="{{ asset('assets/images/banner2.jpg') }}" alt="banner2" height="100" ></figure>
 				</a>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 				<div class="product product-style-2 equal-elem ">
 					<div class="product-thumnail">
 						<a href="{{route('product.details',['slug'=>$sproduct->slug])}}" title="{{$sproduct->name}}">
-							<figure><img src="{{ asset('assets/images/products') }}/{{$sproduct->image}}" width="800" height="800" alt=""></figure>
+							<figure><img class="image-home" src="{{ asset('assets/images/products') }}/{{$sproduct->image}}" width="800" height="800" alt=""></figure>
 						</a>
 						<div class="group-flash">
 							<span class="flash-item sale-label">sale</span>
@@ -63,7 +63,7 @@
 			<h3 class="title-box">Latest Products</h3>
 			<div class="wrap-top-banner">
 				<a href="#" class="link-banner banner-effect-2">
-					<figure><img src="assets/images/digital-electronic-banner.jpg" width="1170" height="240" alt=""></figure>
+					<figure><img src="assets/images/dcbanner.jpg" width="1170" height="240" alt=""></figure>
 				</a>
 			</div>
 			<div class="wrap-products">
@@ -75,7 +75,7 @@
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
 											<a href="{{route('product.details',['slug'=>$lproduct->slug])}}" title="{{$lproduct->name}}">
-												<figure><img src="{{ asset('assets/images/products')}}/{{$lproduct->image}}" width="800" height="800" alt="{{$lproduct->name}}"></figure>
+												<figure><img class="image-home" src="{{ asset('assets/images/products')}}/{{$lproduct->image}}" width="800" height="800" alt="{{$lproduct->name}}"></figure>
 											</a>
 										</div>
 										<div class="product-info">
@@ -98,7 +98,7 @@
 			<h3 class="title-box">Product Categories</h3>
 			<div class="wrap-top-banner">
 				<a href="#" class="link-banner banner-effect-2">
-					<figure><img src="assets/images/fashion-accesories-banner.jpg" width="1170" height="240" alt=""></figure>
+					<figure><img src="assets/images/marvelbanner.jpg" width="1170" height="240" alt=""></figure>
 				</a>
 			</div>
 			<div class="wrap-products">
@@ -120,7 +120,7 @@
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
 											<a href="{{route('product.details',['slug'=>$c_product->slug])}}" title="{{$c_product->name}}">
-												<figure><img src="{{ asset('assets/images/products') }}/{{$c_product->image}}" width="800" height="800" alt="{{$c_product->name}}"></figure>
+												<figure><img class="image-home" src="{{ asset('assets/images/products') }}/{{$c_product->image}}" width="800" height="800" alt="{{$c_product->name}}"></figure>
 											</a>											
 										</div>
 										<div class="product-info">

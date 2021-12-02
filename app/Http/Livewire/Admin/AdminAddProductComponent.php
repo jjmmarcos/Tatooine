@@ -52,11 +52,11 @@ class AdminAddProductComponent extends Component
             'number_of_pages' => 'numeric',
             'regular_price' => 'required|numeric',
             'sale_price' => 'numeric',
-            'SKU' => 'required',
+            'SKU' => 'string',
             'stock_status' => 'required',
             'quantity' => 'required|numeric',
             'image' => 'required|mimes:jpeg,png',
-            'category_id' => 'required',
+            'category_id' => 'numeric',
             'author_id' => 'numeric'
         ]);
     }

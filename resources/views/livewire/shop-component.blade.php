@@ -3,19 +3,20 @@
         <div class="wrap-breadcrumb">
             <ul>
                 <li class="item-link"><a href="#" class="link">home</a></li>
-                <li class="item-link"><span>Digital & Electronics</span></li>
+                <li class="item-link"><span>Shop</span></li>
             </ul>
         </div>
         <div class="row">
             <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
-
+                <!--
                 <div class="banner-shop">
                     <a href="#" class="banner-link">
                         <figure><img src="{{ asset('assets/images/shop-banner.jpg') }}" alt=""></figure>
                     </a>
-                </div>                
+                </div> 
+                -->               
                 <div class="wrap-shop-control">
-                    <h1 class="shop-title">Digital & Electronics</h1>
+                    <h1 class="shop-title">Comics and Merch</h1>
                     <div class="wrap-right">
                         <div class="sort-item orderby ">
                             <select name="orderby" class="use-chosen" wire:model="sorting">
@@ -76,11 +77,11 @@
                             $witems = Cart::instance('wishlist')->content()->pluck('id');
                         @endphp
                         @foreach($products as $product)                        
-                        <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+                        <li class="col-lg-4 col-md-3 col-sm-3 col-xs-3 ">
                             <div class="product product-style-3 equal-elem ">
                                 <div class="product-thumnail">
                                     <a href="{{route('product.details', ['slug'=>$product->slug])}}" title="{{$product->name}}">
-                                        <figure><img src="{{ asset('assets/images/products') }}/{{$product->image}}" alt="{{$product->name}}"></figure>
+                                        <figure><img class="image-format" src="{{ asset('assets/images/products') }}/{{$product->image}}" alt="{{$product->name}}"></figure>
                                     </a>
                                 </div>
                                 <div class="product-info">
@@ -138,19 +139,15 @@
                 </div><!-- Categories widget-->
 
                 <div class="widget mercado-widget filter-widget brand-widget">
-                    <h2 class="widget-title">Brand</h2>
+                    <h2 class="widget-title">Author</h2>
                     <div class="widget-content">
                         <ul class="list-style vertical-list list-limited" data-show="6">
-                            <li class="list-item"><a class="filter-link active" href="#">Fashion Clothings</a></li>
-                            <li class="list-item"><a class="filter-link " href="#">Laptop Batteries</a></li>
-                            <li class="list-item"><a class="filter-link " href="#">Printer & Ink</a></li>
-                            <li class="list-item"><a class="filter-link " href="#">CPUs & Prosecsors</a></li>
-                            <li class="list-item"><a class="filter-link " href="#">Sound & Speaker</a></li>
-                            <li class="list-item"><a class="filter-link " href="#">Shop Smartphone & Tablets</a></li>
-                            <li class="list-item default-hiden"><a class="filter-link " href="#">Printer & Ink</a></li>
-                            <li class="list-item default-hiden"><a class="filter-link " href="#">CPUs & Prosecsors</a></li>
-                            <li class="list-item default-hiden"><a class="filter-link " href="#">Sound & Speaker</a></li>
-                            <li class="list-item default-hiden"><a class="filter-link " href="#">Shop Smartphone & Tablets</a></li>
+                            @for ($i = 0; $i < 6; $i++)
+                                <li class="list-item"><a class="filter-link " href="{{route('product.author',['author_slug'=>$authors[$i]['slug']])}}">{{$authors[$i]['name']}}</a></li>
+                            @endfor
+                            @for ($i = 6; $i < count($authors); $i++)
+                                <li class="list-item default-hiden"><a class="filter-link " href="{{route('product.author',['author_slug'=>$authors[$i]['slug']])}}">{{$authors[$i]['name']}}</a></li>
+                            @endfor
                             <li class="list-item"><a data-label='Show less<i class="fa fa-angle-up" aria-hidden="true"></i>' class="btn-control control-show-more" href="#">Show more<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
