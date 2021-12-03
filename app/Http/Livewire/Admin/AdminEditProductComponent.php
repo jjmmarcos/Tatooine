@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Product;
 use App\Models\Author;
+use App\Models\Ilustrator;
 use Livewire\Component;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
@@ -19,6 +20,7 @@ class AdminEditProductComponent extends Component
     public $short_description;
     public $description;
     public $number_of_pages;
+    public $isbn;
     public $regular_price;
     public $sale_price;
     public $SKU;
@@ -30,6 +32,7 @@ class AdminEditProductComponent extends Component
     public $newimage;
     public $product_id;
     public $author_id;
+    public $ilustrator_id;
 
     public $images;
     public $newimages;
@@ -43,6 +46,7 @@ class AdminEditProductComponent extends Component
         $this->short_description = $product->short_description;
         $this->description = $product->description;
         $this->number_of_pages = $product->number_of_pages;
+        $this->isbn = $product->isbn;
         $this->regular_price = $product->regular_price;
         $this->sale_price = $product->sale_price;
         $this->SKU = $product->SKU;
@@ -55,6 +59,7 @@ class AdminEditProductComponent extends Component
         $this->scategory_id = $product->subcategory_id;
         $this->product_id = $product->id;
         $this->author_id = $product->author_id;
+        $this->ilustrator_id = $product->ilustrator_id;
     }
 
     public function generateSlug()
@@ -69,9 +74,10 @@ class AdminEditProductComponent extends Component
             'slug' => 'required',
             'short_description' => 'required',
             'description' => 'required',
+            'number_of_pages' => 'numeric',
+            'isbn' => 'string',
             'regular_price' => 'required|numeric',
             'sale_price' => 'numeric',
-            'SKU' => 'required',
             'stock_status' => 'required',
             'quantity' => 'required|numeric',
             'category_id' => 'required'
@@ -93,7 +99,6 @@ class AdminEditProductComponent extends Component
             'description' => 'required',
             'regular_price' => 'required|numeric',
             'sale_price' => 'numeric',
-            'SKU' => 'required',
             'stock_status' => 'required',
             'quantity' => 'required|numeric',
             'category_id' => 'required'
@@ -151,6 +156,8 @@ class AdminEditProductComponent extends Component
         {
             $product->subcategory_id = $this->scategory_id;
         }
+        $product->author_id = $this->author_id;
+        $product->ilustrator_id = $this->ilustrator_id;
         $product->save();
         session()->flash('message','Product has been updated successfully!');
     }
@@ -162,9 +169,10 @@ class AdminEditProductComponent extends Component
 
     public function render()
     {
-        $categories = Category::all();
+        $categories = Category::orderBy('name')->get();
         $scategories = Subcategory::where('category_id',$this->category_id)->get();
-        $authors = Author::all();
-        return view('livewire.admin.admin-edit-product-component',['categories'=>$categories,'scategories'=>$scategories,'authors'=>$authors])->layout('layouts.base');
+        $authors = Author::orderBy('name')->get();
+        $ilustrators = Ilustrator::orderBy('name')->get();
+        return view('livewire.admin.admin-edit-product-component',['categories'=>$categories,'scategories'=>$scategories,'authors'=>$authors,'ilustrators'=>$ilustrators])->layout('layouts.base');
     }
 }
