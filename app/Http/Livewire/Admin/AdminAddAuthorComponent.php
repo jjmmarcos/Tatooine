@@ -39,7 +39,7 @@ class AdminAddAuthorComponent extends Component
 
     public function render()
     {
-        $authors = Author::all();
+        $authors = Author::orderBy('name')->get();
         return view('livewire.admin.admin-add-author-component',['authors'=>$authors])->layout('layouts.base');
     }
 }

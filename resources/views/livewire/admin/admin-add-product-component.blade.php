@@ -59,6 +59,14 @@
                             </div>
 
                             <div class="form-group">
+                                <label class="col-md-4 control-label">Product ISBN</label>
+                                <div class="col-md-4">
+                                    <input type="text" placeholder="Product ISBN" class="form-control input-md" wire:model="isbn" />
+                                    @error('isbn') <p class="text-danger">{{$message}}</p> @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="col-md-4 control-label">Regular Price</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Regular Price" class="form-control input-md" wire:model="regular_price" />
@@ -171,6 +179,19 @@
                                         @endforeach                                    
                                     </select>
                                     @error('author_id') <p class="text-danger">{{$message}}</p> @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Ilustrator</label>
+                                <div class="col-md-4">
+                                    <select class="form-control" wire:model="author_id">
+                                        <option value="0">Select Author</option>
+                                        @foreach ($ilustrators as $ilustrator)
+                                            <option value="{{$ilustrator->id}}">{{$ilustrator->name}}</option>
+                                        @endforeach                                    
+                                    </select>
+                                    @error('ilustrator_id') <p class="text-danger">{{$message}}</p> @enderror
                                 </div>
                             </div>
 

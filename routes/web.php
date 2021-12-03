@@ -10,6 +10,7 @@ use App\Http\Livewire\WishlistComponent;
 use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\ContactComponent;
 use App\Http\Livewire\AuthorComponent;
+use App\Http\Livewire\IlustratorComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\User\UserOrdersComponent;
 use App\Http\Livewire\User\UserOrderDetailsComponent;
@@ -38,6 +39,12 @@ use App\Http\Livewire\Admin\AdminContactComponent;
 use App\Http\Livewire\Admin\AdminSettingComponent;
 use App\Http\Livewire\Admin\AdminAuthorsComponent;
 use App\Http\Livewire\Admin\AdminAddAuthorComponent;
+use App\Http\Livewire\Admin\AdminEditAuthorComponent;
+use App\Http\Livewire\Admin\AdminIlustratorsComponent;
+use App\Http\Livewire\Admin\AdminAddIlustratorComponent;
+use App\Http\Livewire\Admin\AdminEditIlustratorComponent;
+
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -124,5 +131,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/admin/settings',AdminSettingComponent::class)->name('admin.settings');
 
     Route::get('/admin/authors',AdminAuthorsComponent::class)->name('admin.authors');
-    Route::get('/admin/authors/add',AdminAddAuthorComponent::class)->name('admin.addauthor');
+    Route::get('/admin/author/add',AdminAddAuthorComponent::class)->name('admin.addauthor');
+    Route::get('/admin/author/edit/{author_slug}',AdminEditAuthorComponent::class)->name('admin.editauthor');
+
+    Route::get('/admin/ilustrators',AdminIlustratorsComponent::class)->name('admin.ilustrators');
+    Route::get('/admin/ilustrator/add',AdminAddIlustratorComponent::class)->name('admin.addilustrator');
+    Route::get('/admin/ilustrator/edit/{ilustrator_slug}',AdminEditIlustratorComponent::class)->name('admin.editilustrator');
 });

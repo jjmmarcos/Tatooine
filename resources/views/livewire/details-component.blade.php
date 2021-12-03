@@ -78,10 +78,19 @@
                                 <del><span class="product-price regprice">${{$product->regular_price}}</span></del>
                             </div>
                         @else
-                            <div class="wrap-price"><span class="product-price">${{$product->regular_price}}</span></div>
+                            <div class="wrap-price">
+                                <span class="product-price">${{$product->sale_price}}</span>
+                                <del><span class="product-price regprice">${{$product->regular_price}}</span></del>
+                            </div>
                         @endif
                         <div class="stock-info in-stock">
-                            <p class="availability">Availability: <b>{{$product->stock_status}}</b></p>
+                            <p class="availability">Availability: 
+                                @if($product->stock_status == 'instock')
+                                    <b style="color: green;">{{$product->stock_status}}</b>
+                                @else
+                                    <b>{{$product->stock_status}}</b>
+                                @endif
+                            </p>
                         </div>
                         <div class="quantity">
                             <span>Quantity:</span>

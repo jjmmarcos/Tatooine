@@ -90,6 +90,9 @@
 														<a title="Authors" href="{{route('admin.authors')}}">All Authors</a>
 													</li>
 													<li class="menu-item">
+														<a title="Authors" href="{{route('admin.ilustrators')}}">All Ilustrators</a>
+													</li>
+													<li class="menu-item">
 														<a title="Manage Home Slider" href="{{route('admin.homeslider')}}">Manage Home Slider</a>
 													</li>
 													<li class="menu-item">
@@ -157,7 +160,7 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="/" class="link-to-home"><img src="{{ asset('assets/images/tatooine-logo.jpg') }}" alt="Logo"></a>
+							<a href="/"><img class="image-logo" src="{{ asset('assets/images/tatooine-logo.jpg') }}" alt="Logo"></a>
 						</div>
 
 						@livewire('header-search-component')
@@ -187,7 +190,7 @@
 								<li class="menu-item"><a href="#" class="link-term">Hot Sale items</a><span class="nav-label hot-label">hot</span></li>
 								<li class="menu-item"><a href="#" class="link-term">Top new items</a><span class="nav-label hot-label">hot</span></li>
 								<li class="menu-item"><a href="#" class="link-term">Top Selling</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top rated items</a><span class="nav-label hot-label">hot</span></li>
+								{{-- <li class="menu-item"><a href="#" class="link-term">Top rated items</a><span class="nav-label hot-label">hot</span></li> --}}
 							</ul>
 						</div>
 					</div>

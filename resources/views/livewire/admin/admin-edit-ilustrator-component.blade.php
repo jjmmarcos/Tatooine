@@ -6,10 +6,10 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                Edit Author
+                                Edit Ilustrator
                             </div>
                             <div class="col-md-6">
-                                <a href="{{route('admin.authors')}}" class="btn btn-success pull-right">All Authors</a>
+                                <a href="{{route('admin.ilustrators')}}" class="btn btn-success pull-right">All Ilustrators</a>
                             </div>
                         </div>
                     </div>
@@ -17,19 +17,19 @@
                         @if(Session::has('message'))
                             <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                         @endif
-                        <form class="form-horizontal" wire:submit.prevent="updateAuthor">
+                        <form class="form-horizontal" wire:submit.prevent="updateIlustrator">
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Author Name</label>
+                                <label class="col-md-4 control-label">Ilustrator Name</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Author Name" class="form-control input-md" wire:model="name" wire:keyup="generateslug" />
+                                    <input type="text" placeholder="Ilustrator Name" class="form-control input-md" wire:model="name" wire:keyup="generateslug" />
                                     @error('name') <p class="text-danger">{{$message}}</p> @enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Author Slug</label>
+                                <label class="col-md-4 control-label">Ilustrator Slug</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Author Slug" class="form-control input-md" wire:model="slug" />
+                                    <input type="text" placeholder="Ilustrator Slug" class="form-control input-md" wire:model="slug" />
                                     @error('slug') <p class="text-danger">{{$message}}</p> @enderror
                                 </div>
                             </div>                            

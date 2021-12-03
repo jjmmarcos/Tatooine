@@ -51,6 +51,22 @@
                             </div>
 
                             <div class="form-group">
+                                <label class="col-md-4 control-label">Number of Pages</label>
+                                <div class="col-md-4">
+                                    <input type="text" placeholder="Number of Pages" class="form-control input-md" wire:model="number_of_pages" />
+                                    @error('number_of_pages') <p class="text-danger">{{$message}}</p> @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">ISBN</label>
+                                <div class="col-md-4">
+                                    <input type="text" placeholder="ISBN" class="form-control input-md" wire:model="isbn" />
+                                    @error('isbn') <p class="text-danger">{{$message}}</p> @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="col-md-4 control-label">Regular Price</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Regular Price" class="form-control input-md" wire:model="regular_price" />
@@ -166,16 +182,25 @@
                                 <label class="col-md-4 control-label">Author</label>
                                 <div class="col-md-4">
                                     <select class="form-control" wire:model="author_id">
-                                        @if($author_id)
-                                            <option value="{{$author_id}}"></option>
-                                        @else
-                                            <option value="0">Select Author</option>
-                                        @endif
+                                        <option value="0">Select Author</option>
                                         @foreach ($authors as $author)
                                             <option value="{{$author->id}}">{{$author->name}}</option>
                                         @endforeach                                    
                                     </select>
                                     @error('author_id') <p class="text-danger">{{$message}}</p> @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Ilustrator</label>
+                                <div class="col-md-4">
+                                    <select class="form-control" wire:model="author_id">
+                                        <option value="0">Select Ilustrator</option>
+                                        @foreach ($ilustrators as $ilustrator)
+                                            <option value="{{$ilustrator->id}}">{{$ilustrator->name}}</option>
+                                        @endforeach                                    
+                                    </select>
+                                    @error('ilustrator_id') <p class="text-danger">{{$message}}</p> @enderror
                                 </div>
                             </div>
 

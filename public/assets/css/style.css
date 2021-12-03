@@ -65,14 +65,21 @@ td > img {
 }
 
 .image-format {
-    height: 400px;
-    width: 450px;
+    height: 250px;
+    width: 500px;
 }
 .image-home {
     height: 300px;
     width: 350px;
 }
-
+.image-logo {
+    height: 125px;
+    width: 150px;
+}
+.image-banner {
+    height: 600px;
+    width: 800px;
+}
 input:focus{
    outline: none;
 }

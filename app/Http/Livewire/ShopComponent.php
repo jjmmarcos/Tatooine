@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use App\Models\Author;
+use App\Models\Ilustrator;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Cart;
@@ -24,7 +25,7 @@ class ShopComponent extends Component
         $this->pagesize = 12;
 
         $this->min_price = 1;
-        $this->max_price = 1000;
+        $this->max_price = 100;
 
     }
     public function store($product_id,$product_name,$product_price)
@@ -82,7 +83,8 @@ class ShopComponent extends Component
         }
 
         $authors = Author::orderBy('name')->get();
-        return view('livewire.shop-component', ['products'=> $products,'categories'=>$categories,'authors'=>$authors])->layout("layouts.base");
+        $ilustrators = Ilustrator::orderBy('name')->get();
+        return view('livewire.shop-component', ['products'=> $products,'categories'=>$categories,'authors'=>$authors,'ilustrators'=>$ilustrators])->layout("layouts.base");
     }
 }
 

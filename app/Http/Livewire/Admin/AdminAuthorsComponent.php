@@ -19,7 +19,7 @@ class AdminAuthorsComponent extends Component
 
     public function render()
     {
-        $authors = Author::paginate(5);
+        $authors = Author::orderBy('name')->paginate(10);
         return view('livewire.admin.admin-authors-component',['authors'=>$authors])->layout('layouts.base');
     }
 }

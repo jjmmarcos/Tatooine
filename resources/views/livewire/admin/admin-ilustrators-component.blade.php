@@ -25,10 +25,10 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                All Authors
+                                All Ilustrators
                             </div>
                             <div class="col-md-6">
-                                <a href="{{route('admin.addauthor')}}" class="btn btn-success pull-right">Add New</a>
+                                <a href="{{route('admin.addilustrator')}}" class="btn btn-success pull-right">Add New</a>
                             </div>
                         </div>
                     <div class="panel-body">
@@ -45,20 +45,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($authors as $author)
+                                @foreach ($ilustrators as $ilustrator)
                                 <tr>
-                                    <td>{{$author->id}}</td>
-                                    <td>{{$author->name}}</td>
-                                    <td>{{$author->slug}}</td>
+                                    <td>{{$ilustrator->id}}</td>
+                                    <td>{{$ilustrator->name}}</td>
+                                    <td>{{$ilustrator->slug}}</td>
                                     <td>
-                                        <a href="{{route('admin.editauthor',['author_slug'=>$author->slug])}}"><i class="fa fa-edit fa-2x"></i></a>
-                                        <a href="#" onclick="confirm('Are you sure, You want to delete this author?') || event.stopImmediatePropagation()" wire:click.prevent="deleteAuthor({{$author->id}})" style="margin-left:10px;"><i class="fa fa-times fa-2x text-danger"></i></a>
+                                        <a href="{{route('admin.editilustrator',['ilustrator_slug'=>$ilustrator->slug])}}"><i class="fa fa-edit fa-2x"></i></a>
+                                        <a href="#" onclick="confirm('Are you sure, You want to delete this ilustrator?') || event.stopImmediatePropagation()" wire:click.prevent="deleteIlustrator({{$ilustrator->id}})" style="margin-left:10px;"><i class="fa fa-times fa-2x text-danger"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        {{$authors->links()}}
+                        {{$ilustrators->links()}}
                     </div>
                 </div>
             </div>
