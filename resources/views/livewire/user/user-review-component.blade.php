@@ -26,8 +26,7 @@
                             <form wire:submit.prevent="addReview" id="commentform" class="comment-form">
                                 <div class="comment-form-rating">
                                     <span>Your rating</span>
-                                    <p class="stars">
-                                        
+                                    <p class="stars">                                        
                                         <label for="rated-1"></label>
                                         <input type="radio" id="rated-1" name="rating" value="1" wire:model="rating">
                                         <label for="rated-2"></label>

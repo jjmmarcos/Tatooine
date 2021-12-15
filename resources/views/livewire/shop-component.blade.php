@@ -86,7 +86,7 @@
                                 </div>
                                 <div class="product-info">
                                     <a href="{{route('product.details', ['slug'=>$product->slug])}}" class="product-name"><span>{{$product->name}}</span></a>
-                                    <div class="wrap-price"><span class="product-price">{{$product->regular_price}}</span></div>
+                                    <div class="wrap-price"><span class="product-price">${{$product->regular_price}}</span></div>
                                     <a href="#" class="btn add-to-cart" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}})">Add To Cart</a>
                                     <div class="product-wish">
                                         @if($witems->contains($product->id))
@@ -142,16 +142,16 @@
                     <h2 class="widget-title">Authors</h2>
                     <div class="widget-content">
                         <ul class="list-style vertical-list list-limited" data-show="6">
-                            @for ($i = 0; $i < 6; $i++)
-                                <li class="list-item"><a class="filter-link " href="{{route('product.author',['author_slug'=>$authors[$i]['slug']])}}">{{$authors[$i]['name']}}</a></li>
+                            @for ($i = 0; $i < 6  && $i < count($authors); $i++)
+                                <li class="list-item"><a class="filter-link" href="{{route('product.author',['author_slug'=>$authors[$i]['slug']])}}">{{$authors[$i]['name']}}</a></li>
                             @endfor
                             @for ($i = 6; $i < count($authors); $i++)
-                                <li class="list-item default-hiden"><a class="filter-link " href="{{route('product.author',['author_slug'=>$authors[$i]['slug']])}}">{{$authors[$i]['name']}}</a></li>
+                                <li class="list-item default-hiden"><a class="filter-link" href="{{route('product.author',['author_slug'=>$authors[$i]['slug']])}}">{{$authors[$i]['name']}}</a></li>
                             @endfor
                             <li class="list-item"><a data-label='Show less<i class="fa fa-angle-up" aria-hidden="true"></i>' class="btn-control control-show-more" href="#">Show more<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
-                </div><!-- brand widget-->
+                </div><!-- author widget-->
 
                 <div class="widget mercado-widget filter-widget price-filter">
                     <h2 class="widget-title">Price <span class="text-info">${{$min_price}} - ${{$max_price}}</span></h2>
@@ -173,7 +173,7 @@
                         </ul>
                     </div>
                 </div><!-- Color --> --}}
-
+                <br/><br/>
                 <div class="widget mercado-widget filter-widget brand-widget">
                     <h2 class="widget-title">Ilustrators</h2>
                     <div class="widget-content">
@@ -187,7 +187,7 @@
                             <li class="list-item"><a data-label='Show less<i class="fa fa-angle-up" aria-hidden="true"></i>' class="btn-control control-show-more" href="#">Show more<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
-                </div><!-- brand widget-->
+                </div><!-- Ilustrator-->
 
                 <div class="widget mercado-widget filter-widget">
                     <h2 class="widget-title">Size</h2>
@@ -199,7 +199,7 @@
                             <li class="list-item"><a class="filter-link " href="#">xl</a></li>
                         </ul>
                         <div class="widget-banner">
-                            <figure><img src="{{ asset('assets/images/size-banner-widget.jpg') }}" width="270" height="331" alt=""></figure>
+                            <figure><img src="{{ asset('assets/images/banner1.jpg') }}" width="270" height="331" alt=""></figure>
                         </div>
                     </div>
                 </div><!-- Size -->

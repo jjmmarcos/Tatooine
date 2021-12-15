@@ -7,6 +7,8 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Shipping;
 use App\Models\Transaction;
+use App\Models\Profile;
+use App\Models\User;
 use Cart;
 use Exception;
 use Illuminate\Support\Facades\Auth;
@@ -47,6 +49,36 @@ class CheckoutComponent extends Component
     public $exp_month;
     public $exp_year;
     public $cvc;
+
+    public $profile;
+    public $userid;
+
+    public function mount() 
+    {        
+        
+        if(Auth::check()) {
+            $user = User::find(Auth::user()->id);
+            $this->userid = Auth::user()->id;
+            $this->firstname = $user->name;        
+            $this->email = $user->email;
+        } else {
+            return redirect()->route('login');
+        }
+
+        if (Profile::where('user_id', '=', $this->userid)->exists()) {
+            $this->profile = Profile::where('user_id',$this->userid)->first();
+            $this->lastname = $this->profile->lastname; 
+            $this->mobile = $this->profile->mobile;
+            $this->image = $this->profile->image;
+            $this->line1 = $this->profile->line1;
+            $this->line2 = $this->profile->line2;
+            $this->city = $this->profile->city;
+            $this->province = $this->profile->province;
+            $this->country = $this->profile->country;
+            $this->zipcode = $this->profile->zipcode;
+            $this->profile_id = $this->profile->id;            
+        }
+    }
 
     public function updated($fields)
     {
@@ -282,7 +314,8 @@ class CheckoutComponent extends Component
     
     public function render()
     {
+        $profile = Profile::where('user_id',Auth::user()->id)->first();
         $this->verifyForCheckout();
-        return view('livewire.checkout-component')->layout("layouts.base");
+        return view('livewire.checkout-component',['profile'=>$this->profile])->layout("layouts.base");
     }
 }

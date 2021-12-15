@@ -12,11 +12,11 @@
     
             <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
     
-                <div class="banner-shop">
+                {{-- <div class="banner-shop">
                     <a href="#" class="banner-link">
                         <figure><img src="{{ asset('assets/images/shop-banner.jpg') }}" alt=""></figure>
                     </a>
-                </div>
+                </div> --}}
     
                 <div class="wrap-shop-control">
     
@@ -160,7 +160,7 @@
                             <li class="list-item"><a class="filter-link " href="#">xl</a></li>
                         </ul>
                         <div class="widget-banner">
-                            <figure><img src="{{ asset('assets/images/size-banner-widget.jpg') }}" width="270" height="331" alt=""></figure>
+                            <figure><img src="{{ asset('assets/images/banner1.jpg') }}" width="270" height="331" alt=""></figure>
                         </div>
                     </div>
                 </div><!-- Size -->

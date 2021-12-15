@@ -157,8 +157,11 @@
 												foreach ($socialNetworks as $socialNetwork) {										
 													if($setting->$socialNetwork)
 													{
-														echo "<li><a href=\"{{$setting->$socialNetwork}}\" class=\"link-to-item\" title=\"$socialNetwork\"><i class=\"fa fa-$socialNetwork\" aria-hidden=\"true\"></i></a></li>";
-														echo $setting->$socialNetwork;
+														echo "<li><a href=\"https://$setting[$socialNetwork]\" 
+																class=\"link-to-item\" title=\"$socialNetwork\">
+																<i class=\"fa fa-$socialNetwork\" aria-hidden=\"true\"></i>
+																</a>
+															</li>";														
 													}													
 												}
 											@endphp

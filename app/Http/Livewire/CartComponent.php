@@ -67,7 +67,7 @@ class CartComponent extends Component
     public function deleteFromSaveForLater($rowId)
     {
         Cart::instance('saveForLater')->remove($rowId);
-        session()->flas('s_success_message',"Item has been removed for later");
+        session()->flash('s_success_message',"Item has been removed for later");
     }
 
     public function applyCouponCode()
@@ -99,7 +99,7 @@ class CartComponent extends Component
                 $this->discount = (Cart::instance('cart')->subtotal() * session()->get('coupon')['value'])/100;
             }
             $this->subtotalAfterDiscount = Cart::instance('cart')->subtotal() - $this->discount;
-            $this->taxAfterDiscount = ($this->subtotalAfterDiscount * config('cart.tax'))/100;
+            //$this->taxAfterDiscount = ($this->subtotalAfterDiscount * config('cart.tax'))/100;
             $this->totalAfterDiscount = $this->subtotalAfterDiscount + $this->taxAfterDiscount;
         }
     }
@@ -134,7 +134,7 @@ class CartComponent extends Component
             session()->put('checkout',[
                 'discount' => $this->discount,
                 'subtotal' => $this->subtotalAfterDiscount,
-                'tax' => $this->taxAfterDiscount,
+                'tax' => Cart::instance('cart')->tax(),
                 'total' => $this->totalAfterDiscount
             ]);
         }

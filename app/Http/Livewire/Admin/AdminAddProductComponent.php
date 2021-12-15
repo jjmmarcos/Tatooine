@@ -23,7 +23,6 @@ class AdminAddProductComponent extends Component
     public $isbn;
     public $regular_price;
     public $sale_price;
-    public $SKU;
     public $stock_status;
     public $featured;
     public $quantity;
@@ -50,8 +49,8 @@ class AdminAddProductComponent extends Component
         $this->validateOnly($fields,[
             'name' => 'required',
             'slug' => 'required|unique:products',
-            'short_description' => 'required|string',
-            'description' => 'required|string',
+            'short_description' => 'required',
+            'description' => 'required',
             'number_of_pages' => 'numeric',
             'regular_price' => 'required|numeric',
             'sale_price' => 'numeric',
@@ -68,8 +67,8 @@ class AdminAddProductComponent extends Component
             'name' => 'required',
             'slug' => 'required|unique:products',
             'short_description' => 'string',
-            'description' => 'required|string',
-            'number_of_pages' => 'required|string',
+            'description' => 'required',
+            'number_of_pages' => 'required',
             'regular_price' => 'required|numeric',
             'sale_price' => 'numeric',
             'stock_status' => 'required',

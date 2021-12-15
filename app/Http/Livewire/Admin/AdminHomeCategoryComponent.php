@@ -30,6 +30,5 @@ class AdminHomeCategoryComponent extends Component
     {
         $categories = Category::all();
         return view('livewire.admin.admin-home-category-component',['categories'=>$categories])->layout('layouts.base');
-    }
-    
+    }    
 }

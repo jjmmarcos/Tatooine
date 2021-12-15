@@ -65,7 +65,7 @@ Route::get('/', function () {
 */
 Route::get('/', HomeComponent::class);
 
-Route::get('/shop', ShopComponent::class);
+Route::get('/shop', ShopComponent::class)->name('shop.view');
 
 Route::get('/cart', CartComponent::class)->name('product.cart');
 
@@ -84,6 +84,8 @@ Route::get('/thank-you',ThankyouComponent::class)->name('thankyou');
 Route::get('/contact-us',ContactComponent::class)->name('contact');
 
 Route::get('/product-author/{author_slug}', AuthorComponent::class)->name('product.author');
+
+Route::get('/product-ilustrator/{ilustrator_slug}', IlustratorComponent::class)->name('product.ilustrator');
 
 /*
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -83,14 +83,6 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">SKU</label>
-                                <div class="col-md-4">
-                                    <input type="text" placeholder="SKU" class="form-control input-md" wire:model="SKU" />
-                                    @error('SKU') <p class="text-danger">{{$message}}</p> @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group">
                                 <label class="col-md-4 control-label">Stock</label>
                                 <div class="col-md-4">
                                     <select class="form-control" wire:model="stock_status">

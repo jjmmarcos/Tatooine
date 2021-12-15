@@ -23,7 +23,6 @@ class AdminEditProductComponent extends Component
     public $isbn;
     public $regular_price;
     public $sale_price;
-    public $SKU;
     public $stock_status;
     public $featured;
     public $quantity;
@@ -49,7 +48,6 @@ class AdminEditProductComponent extends Component
         $this->isbn = $product->isbn;
         $this->regular_price = $product->regular_price;
         $this->sale_price = $product->sale_price;
-        $this->SKU = $product->SKU;
         $this->stock_status = $product->stock_status;
         $this->featured = $product->featured;
         $this->quantity = $product->quantity;
@@ -116,7 +114,6 @@ class AdminEditProductComponent extends Component
         $product->description = $this->description;
         $product->regular_price = $this->regular_price;
         $product->sale_price = $this->sale_price;
-        $product->SKU = $this->SKU;
         $product->stock_status = $this->stock_status;
         $product->featured = $this->featured;
         $product->quantity = $this->quantity;

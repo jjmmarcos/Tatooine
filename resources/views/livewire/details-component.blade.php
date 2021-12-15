@@ -125,9 +125,16 @@
                             <div class="tab-content-item " id="add_infomation">
                                 <table class="shop_attributes">
                                     <tbody>
-                                        <tr>
-                                            <th>Weight</th><td class="product_weight">1 kg</td>
-                                        </tr>
+                                        @if ($product->isbn)
+                                            <tr>
+                                                <th>ISBN</th><td class="product_weight">{{$product->isbn}}</td>
+                                            </tr>    
+                                        @endif 
+                                        @if ($product->number_of_pages)
+                                            <tr>
+                                                <th>Number of Pages</th><td class="product_weight">{{$product->number_of_pages}}</td>
+                                            </tr>    
+                                        @endif                                        
                                         <tr>
                                             <th>Dimensions</th><td class="product_dimensions">12 x 15 x 23 cm</td>
                                         </tr>
@@ -248,7 +255,7 @@
                                 <div class="product product-widget-style">
                                     <div class="thumbnnail">
                                         <a href="{{route('product.details', ['slug'=>$p_product->slug])}}" title="{{$p_product->name}}">
-                                            <figure><img src="{{ asset('assets/images/products') }}/{{$p_product->image}}" alt="{{$p_product->name}}"></figure>
+                                            <figure><img class="image-home" src="{{ asset('assets/images/products') }}/{{$p_product->image}}" alt="{{$p_product->name}}"></figure>
                                         </a>
                                     </div>
                                     <div class="product-info">
@@ -274,7 +281,7 @@
                             <div class="product product-style-2 equal-elem ">
                                 <div class="product-thumnail">
                                     <a href="{{route('product.details', ['slug'=>$r_product->slug])}}" title="{{$r_product->name}}">
-                                        <figure><img src="{{ asset('assets/images/products' ) }}/{{$r_product->image}}" width="214" height="214" alt="{{$r_product->name}}"></figure>
+                                        <figure><img class="image-format" src="{{ asset('assets/images/products' ) }}/{{$r_product->image}}" width="214" height="214" alt="{{$r_product->name}}"></figure>
                                     </a>
                                     <div class="group-flash">
                                         <span class="flash-item new-label">new</span>

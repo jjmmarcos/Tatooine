@@ -58,7 +58,7 @@
                 @if(Session::has('coupon'))
                     <p class="summary-info"><span class="title">Discount ({{Session::get('coupon')['code']}}) <a href="#" wire:click.prevent="removeCoupon"><i class="fa fa-times text-danger"></i></a> </span><b class="index"> -${{number_format($discount,2)}}</b></p>
                     <p class="summary-info"><span class="title">Subtotal with Discount</span><b class="index">${{number_format($subtotalAfterDiscount,2)}}</b></p>
-                    <p class="summary-info"><span class="title">Tax ({{config('cart.tax')}}%)</span><b class="index">${{number_format($taxAfterDiscount,2)}}</b></p>                    
+                    {{-- <p class="summary-info"><span class="title">Tax ({{config('cart.tax')}}%)</span><b class="index">${{number_format($taxAfterDiscount,2)}}</b></p> --}}                    
                     <p class="summary-info total-info "><span class="title">Total</span><b class="index">${{number_format($totalAfterDiscount,2)}}</b></p>
                 @else
                     <p class="summary-info"><span class="title">Tax</span><b class="index">${{Cart::instance('cart')->tax()}}</b></p>
@@ -89,7 +89,7 @@
                     @endif
                 @endif
                 <a class="btn btn-checkout" href="#" wire:click.prevent="checkout">Check out</a>
-                <a class="link-to-shop" href="shop.html">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                <a class="link-to-shop" href="{{ route('shop.view')}}">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
             </div>
             <div class="update-clear">
                 <a class="btn btn-clear" href="#" wire:click.prevent="destroyAll()">Clear Shopping Cart</a>
@@ -123,7 +123,7 @@
                     </div>
                     <div class="price-field produtc-price"><p class="price">${{$item->model->regular_price}}</p></div>
                     <div class="quantity">
-                        <p class="text-center"><a href="#" wire:click.prevent="moveToCart({{$item->rowId}})">Move To Cart</a></p>
+                        <p class="text-center"><a class="text-center" href="#" wire:click.prevent="moveToCart('{{$item->rowId}}')">Move To Cart</a></p>
                     </div>
                     <div class="delete">
                         <a href="#" wire:click.prevent="deleteFromSaveForLater('{{$item->rowId}}')" class="btn btn-delete" title="">

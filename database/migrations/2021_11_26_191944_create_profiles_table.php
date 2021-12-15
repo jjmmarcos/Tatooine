@@ -17,6 +17,9 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->string('image')->nullable();
+            $table->string('firstname')->nullable();
+            $table->string('lastname')->nullable();
+            $table->string('email')->nullable();
             $table->string('mobile')->nullable();
             $table->string('line1')->nullable();
             $table->string('line2')->nullable();
@@ -24,8 +27,11 @@ class CreateProfilesTable extends Migration
             $table->string('province')->nullable();
             $table->string('country')->nullable();
             $table->string('zipcode')->nullable();
+            $table->integer('cardnumber')->nullable();
+            $table->integer('expiry_month')->nullable();
+            $table->integer('expiry_year')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
