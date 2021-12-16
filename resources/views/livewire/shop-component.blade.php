@@ -16,7 +16,7 @@
                 </div> 
                 -->               
                 <div class="wrap-shop-control">
-                    <h1 class="shop-title">Comics and Merch</h1>
+                    <h1 class="shop-title">Comics, Manga and Merch</h1>
                     <div class="wrap-right">
                         <div class="sort-item orderby ">
                             <select name="orderby" class="use-chosen" wire:model="sorting">
@@ -41,7 +41,7 @@
 
                         <div class="change-display-mode">
                             <a href="#" class="grid-mode display-mode active"><i class="fa fa-th"></i>Grid</a>
-                            <a href="list.html" class="list-mode display-mode"><i class="fa fa-th-list"></i>List</a>
+                            {{-- <a href="list.html" class="list-mode display-mode"><i class="fa fa-th-list"></i>List</a> --}}
                         </div>
 
                     </div>
@@ -179,10 +179,10 @@
                     <div class="widget-content">
                         <ul class="list-style vertical-list list-limited" data-show="6">
                             @for ($i = 0; $i < 6 && $i < count($ilustrators); $i++)
-                                <li class="list-item"><a class="filter-link " href="{{route('product.author',['author_slug'=>$ilustrators[$i]['slug']])}}">{{$ilustrators[$i]['name']}}</a></li>
+                                <li class="list-item"><a class="filter-link " href="{{route('product.ilustrator',['ilustrator_slug'=>$ilustrators[$i]['slug']])}}">{{$ilustrators[$i]['name']}}</a></li>
                             @endfor
                             @for ($i = 6; $i < count($ilustrators); $i++)
-                                <li class="list-item default-hiden"><a class="filter-link " href="{{route('product.author',['author_slug'=>$ilustrators[$i]['slug']])}}">{{$authors[$i]['name']}}</a></li>
+                                <li class="list-item default-hiden"><a class="filter-link " href="{{route('product.ilustrator',['ilustrator_slug'=>$ilustrators[$i]['slug']])}}">{{$authors[$i]['name']}}</a></li>
                             @endfor
                             <li class="list-item"><a data-label='Show less<i class="fa fa-angle-up" aria-hidden="true"></i>' class="btn-control control-show-more" href="#">Show more<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
                         </ul>
@@ -208,61 +208,21 @@
                     <h2 class="widget-title">Popular Products</h2>
                     <div class="widget-content">
                         <ul class="products">
-                            <li class="product-item">
-                                <div class="product product-widget-style">
-                                    <div class="thumbnnail">
-                                        <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                            <figure><img src="{{ asset('assets/images/products/digital_01.jpg') }}" alt=""></figure>
-                                        </a>
+                            @foreach ($popularProducts as $popularProduct)                                                                                            
+                                <li class="product-item">
+                                    <div class="product product-widget-style">
+                                        <div class="thumbnnail">
+                                            <a href="{{route('product.details', ['slug'=>$popularProduct->slug])}}" title="{{$popularProduct->name}}">
+                                                <figure><img src="{{ asset('assets/images/products') }}/{{$popularProduct->image}}" alt="{{$popularProduct->name}}"></figure>
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="{{ asset('assets/images/products') }}/{{$popularProduct->image}}" class="product-name"><span>{{$popularProduct->name}}</span></a>
+                                            <div class="wrap-price"><span class="product-price">${{$popularProduct->regular_price}}</span></div>
+                                        </div>
                                     </div>
-                                    <div class="product-info">
-                                        <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
-                                        <div class="wrap-price"><span class="product-price">$168.00</span></div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="product-item">
-                                <div class="product product-widget-style">
-                                    <div class="thumbnnail">
-                                        <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                            <figure><img src="{{ asset('assets/images/products/digital_17.jpg') }}" alt=""></figure>
-                                        </a>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
-                                        <div class="wrap-price"><span class="product-price">$168.00</span></div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="product-item">
-                                <div class="product product-widget-style">
-                                    <div class="thumbnnail">
-                                        <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                            <figure><img src="{{ asset('assets/images/products/digital_18.jpg') }}" alt=""></figure>
-                                        </a>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
-                                        <div class="wrap-price"><span class="product-price">$168.00</span></div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="product-item">
-                                <div class="product product-widget-style">
-                                    <div class="thumbnnail">
-                                        <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                            <figure><img src="{{ asset('assets/images/products/digital_20.jpg') }}" alt=""></figure>
-                                        </a>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
-                                        <div class="wrap-price"><span class="product-price">$168.00</span></div>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>                                 
+                            @endforeach
                         </ul>
                     </div>
                 </div><!-- brand widget-->

@@ -159,11 +159,6 @@ class AdminEditProductComponent extends Component
         session()->flash('message','Product has been updated successfully!');
     }
 
-    public function changeSubcategory()
-    {
-        $this->scategory_id = 0;
-    }
-
     public function render()
     {
         $categories = Category::orderBy('name')->get();

@@ -32,13 +32,14 @@ class UserReviewComponent extends Component
             'comment' => 'required'
         ]);
         $review = new Review();
+        $orderItem = OrderItem::find($this->order_item_id);
         $review->rating = $this->rating;
         $review->comment = $this->comment;
-        $review->order_item_id = $this->order_item_id;
+        $review->order_item_id = $this->order_item_id;   
+        $review->product_id = $orderItem->product_id;     
         //dd($review->rating . ' ' . $review->comment);
-        $review->save();
-
-        $orderItem = OrderItem::find($this->order_item_id);
+        $review->save();        
+        
         $orderItem->rstatus = true;
         $orderItem->save();
         session()->flash('message','Your review has been added successfully!');

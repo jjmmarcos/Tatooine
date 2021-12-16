@@ -47,7 +47,6 @@
 				<div class="container">
 
 					<div class="row">
-
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
 								<h3 class="item-header">Contact Details</h3>
@@ -73,7 +72,6 @@
 						</div>
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-
 							<div class="wrap-footer-item">
 								<h3 class="item-header">Hot Line</h3>
 								<div class="item-content">
@@ -105,11 +103,11 @@
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">My Account</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Brands</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Gift Certificates</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Wish list</a></li>
+												<li class="menu-item"><a href="{{route('user.profile')}}" class="link-term">My Profile</a></li>
+												<li class="menu-item"><a href="{{route('shop.view')}}" class="link-term">Shop</a></li>
+												<li class="menu-item"><a href="{{route('user.dashboard')}}" class="link-term">Dashboard</a></li>
+												<li class="menu-item"><a href="{{route('user.orders')}}" class="link-term">My Orders</a></li>
+												<li class="menu-item"><a href="{{route('user.changepassword')}}" class="link-term">Change Password</a></li>
 											</ul>
 										</div>
 									</div>
@@ -119,11 +117,10 @@
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">Contact Us</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Returns</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Site Map</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Specials</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Order History</a></li>
+												<li class="menu-item"><a href="{{route('contact')}}" class="link-term">Contact Us</a></li>
+												<li class="menu-item"><a href="{{route('shop.view')}}" class="link-term">Shop</a></li>
+												<li class="menu-item"><a href="{{route('product.cart')}}" class="link-term">Cart</a></li>
+												<li class="menu-item"><a href="{{route('checkout')}}" class="link-term">Checkout</a></li>
 											</ul>
 										</div>
 									</div>
@@ -140,7 +137,7 @@
 								<h3 class="item-header">We Using Safe Payments:</h3>
 								<div class="item-content">
 									<div class="wrap-list-item wrap-gallery">
-										<img src="assets/images/payment.png" style="max-width: 260px;">
+										<img src="{{asset('assets/images/payment.png')}}" style="max-width: 260px;">
 									</div>
 								</div>
 							</div>
@@ -177,8 +174,8 @@
 								<div class="item-content">
 									<div class="wrap-list-item apps-list">
 										<ul>
-											<li><a href="#" class="link-to-item" title="our application on apple store"><figure><img src="assets/images/brands/apple-store.png" alt="apple store" width="128" height="36"></figure></a></li>
-											<li><a href="#" class="link-to-item" title="our application on google play store"><figure><img src="assets/images/brands/google-play-store.png" alt="google play store" width="128" height="36"></figure></a></li>
+											<li><a href="#" class="link-to-item" title="our application on apple store"><figure><img src="{{asset('assets/images/brands/apple-store.png')}}" alt="apple store" width="128" height="36"></figure></a></li>
+											<li><a href="#" class="link-to-item" title="our application on google play store"><figure><img src="{{asset('assets/images/brands/google-play-store.png')}}" alt="google play store" width="128" height="36"></figure></a></li>
 										</ul>
 									</div>
 								</div>
@@ -188,7 +185,7 @@
 					</div>
 				</div>
 
-				<div class="wrap-back-link">
+				{{-- <div class="wrap-back-link">
 					<div class="container">
 						<div class="back-link-box">
 							<h3 class="backlink-title">Quick Links</h3>
@@ -236,22 +233,22 @@
 							</div>
 						</div>
 					</div>
-				</div>
-
+				</div> --}}
+				<br>
 			</div>
 
 			<div class="coppy-right-box">
 				<div class="container">
 					<div class="coppy-right-item item-left">
-						<p class="coppy-right-text">Copyright © 2020 Surfside Media. All rights reserved</p>
+						<p class="coppy-right-text">Copyright © 2020 Tatooine Cómics. All rights reserved</p>
 					</div>
 					<div class="coppy-right-item item-right">
 						<div class="wrap-nav horizontal-nav">
 							<ul>
-								<li class="menu-item"><a href="about-us.html" class="link-term">About us</a></li>								
-								<li class="menu-item"><a href="privacy-policy.html" class="link-term">Privacy Policy</a></li>
-								<li class="menu-item"><a href="terms-conditions.html" class="link-term">Terms & Conditions</a></li>
-								<li class="menu-item"><a href="return-policy.html" class="link-term">Return Policy</a></li>								
+								<li class="menu-item"><a href="#" class="link-term">About us</a></li>								
+								<li class="menu-item"><a href="#" class="link-term">Privacy Policy</a></li>
+								<li class="menu-item"><a href="#" class="link-term">Terms & Conditions</a></li>
+								<li class="menu-item"><a href="#" class="link-term">Return Policy</a></li>								
 							</ul>
 						</div>
 					</div>

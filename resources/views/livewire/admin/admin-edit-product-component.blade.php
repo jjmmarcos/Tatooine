@@ -160,7 +160,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Sub Category</label>
                                 <div class="col-md-4">
-                                    <select class="form-control" wire:model="scategory_id" wire:change="changeSubcategory">
+                                    <select class="form-control" wire:model="scategory_id" wire:model="scategory_id">
                                         <option value="0">Select Category</option>
                                         @foreach ($scategories as $scategory)
                                             <option value="{{$scategory->id}}">{{$scategory->name}}</option>
@@ -186,7 +186,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Ilustrator</label>
                                 <div class="col-md-4">
-                                    <select class="form-control" wire:model="author_id">
+                                    <select class="form-control" wire:model="ilustrator_id">
                                         <option value="0">Select Ilustrator</option>
                                         @foreach ($ilustrators as $ilustrator)
                                             <option value="{{$ilustrator->id}}">{{$ilustrator->name}}</option>

@@ -349,54 +349,6 @@
 						</div>
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
-							<div class="row">
-								<div class="wrap-footer-item twin-item">
-									<h3 class="item-header">My Account</h3>
-									<div class="item-content">
-										<div class="wrap-vertical-nav">
-											<ul>
-												<li class="menu-item"><a href="#" class="link-term">My Account</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Brands</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Gift Certificates</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Wish list</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="wrap-footer-item twin-item">
-									<h3 class="item-header">Infomation</h3>
-									<div class="item-content">
-										<div class="wrap-vertical-nav">
-											<ul>
-												<li class="menu-item"><a href="#" class="link-term">Contact Us</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Returns</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Site Map</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Specials</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Order History</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="row">
-
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-							<div class="wrap-footer-item">
-								<h3 class="item-header">We Using Safe Payments:</h3>
-								<div class="item-content">
-									<div class="wrap-list-item wrap-gallery">
-										<img src="assets/images/payment.png" style="max-width: 260px;">
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
 								<h3 class="item-header">Social network</h3>
 								<div class="item-content">
@@ -408,6 +360,20 @@
 											<li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 											<li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
 										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="row">
+						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+							<div class="wrap-footer-item">
+								<h3 class="item-header">We Using Safe Payments:</h3>
+								<div class="item-content">
+									<div class="wrap-list-item wrap-gallery">
+										<img src="assets/images/payment.png" style="max-width: 260px;">
 									</div>
 								</div>
 							</div>

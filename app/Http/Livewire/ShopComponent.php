@@ -5,9 +5,11 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use App\Models\Author;
 use App\Models\Ilustrator;
+use App\Models\Review;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Cart;
+use DB;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 
@@ -84,7 +86,14 @@ class ShopComponent extends Component
 
         $authors = Author::orderBy('name')->get();
         $ilustrators = Ilustrator::orderBy('name')->get();
-        return view('livewire.shop-component', ['products'=> $products,'categories'=>$categories,'authors'=>$authors,'ilustrators'=>$ilustrators])->layout("layouts.base");
+        $reviews = Review::orderBy('rating')->limit(5)->get();
+        $popularProducts = DB::table('products')
+            ->join('reviews', 'products.id', '=', 'reviews.product_id')
+            ->select('products.*')
+            ->orderByRaw('rating DESC')
+            ->limit(3)
+            ->get();        
+        return view('livewire.shop-component', ['products'=> $products,'categories'=>$categories,'authors'=>$authors,'ilustrators'=>$ilustrators,'popularProducts'=>$popularProducts])->layout("layouts.base");
     }
 }
 

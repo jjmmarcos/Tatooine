@@ -9,6 +9,7 @@ use App\Models\Ilustrator;
 use App\Models\Category;
 use App\Models\Subcategory;
 use Cart;
+use DB;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithPagination;
 
@@ -88,6 +89,12 @@ class IlustratorComponent extends Component
         $authors = Author::orderBy('name')->get();
         $ilustrators = Ilustrator::orderBy('name')->get();
         $categories = Category::all();
-        return view('livewire.ilustrator-component',['products'=> $products,'categories'=>$categories,'ilustrators'=>$ilustrators,'ilustrator_name'=>$ilustrator_name,'authors'=>$authors])->layout("layouts.base");
+        $popularProducts = DB::table('products')
+            ->join('reviews', 'products.id', '=', 'reviews.product_id')
+            ->select('products.*')
+            ->orderByRaw('rating DESC')
+            ->limit(3)
+            ->get();        
+        return view('livewire.ilustrator-component',['products'=> $products,'categories'=>$categories,'ilustrators'=>$ilustrators,'ilustrator_name'=>$ilustrator_name,'authors'=>$authors,'popularProducts'=>$popularProducts])->layout("layouts.base");
     }
 }

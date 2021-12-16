@@ -18,6 +18,7 @@ class CreateReviewsTable extends Migration
             $table->integer('rating');
             $table->text('comment');
             $table->bigInteger('order_item_id')->unsigned();
+            $table->bigInteger('product_id');
             $table->timestamps();
             $table->foreign('order_item_id')->references('id')->on('order_items')->onDelete('cascade');
         });

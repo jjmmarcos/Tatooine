@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Carbon\Carbon;
 use Cart;
+use DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Coupon;
 
@@ -167,8 +168,7 @@ class CartComponent extends Component
         if(Auth::check())
         {   
             Cart::instance('cart')->store(Auth::user()->email);
-        }
-
+        }        
         return view('livewire.cart-component')->layout("layouts.base");
     }
 }
